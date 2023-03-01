@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRIS Flowers Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        * {
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+        
+        }
+
+        /* header alignment css */
+
+        header {
+            padding: 2rem 0 0 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+        }
+
+        h1 {
+            color: #fff;
+            font-family:'Times New Roman', Times, serif;
+            font-size: 3rem;
+            padding: 2rem 15rem 2rem 25rem;
+            align-content : center;
+        }
+
+        /* Flower background */
+
+        .bg {
+            background-image: url('https://images.pexels.com/photos/5122689/pexels-photo-5122689.jpeg?auto=compress&cs=tinysrgb&w=600');
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+        }
+
+
+        /* main header css */
+
+
+        .main-header {
+            color: #fff;
+            padding: 2rem 0 3rem 26rem;
+
+        }
+
+
+        label {
+            font-family: monospace;
+            font-size: 1.7rem;
+            font-style: inherit;
+            font-weight: 600;
+        }
+
+        select {
+            padding: 1rem 10rem 1rem 1rem;
+            background: #fff;
+            border: 2px solid #fff;
+            outline: 0;
+            color: #222222;
+            border-radius: 10px;
+        }
+
+        option {
+            padding: 1rem 10rem 1rem 1rem;
+        }
+
+        /* main content css*/
+
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: center;
+      
+        }
+
+        input {
+            border: none;
+            background: transparent;
+            border: 2px solid transparent;
+            border-left: 2px solid #ffffff;
+            padding: 1rem 10rem 1rem 1rem;
+            color: #fffdfe;
+            outline: 0;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+            transition: 0.5s all ease;
+            cursor: pointer;
+            
+
+        }
+
+        input:hover {
+            border: 2px solid #ffffff;
+        }
+
+        input:focus {
+            border: 2px solid transparent;
+            border-bottom: 2px solid #ffffff;
+            cursor: text;
+        }
+
+        ::placeholder {
+            color: #ffffff;
+        }
+
+        .btn {
+            background-color: #ffffff;
+            color: #000000;
+            text-align: center;
+            border: 0;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.6s all ease;
+        }
+
+        .btn:hover {
+         opacity: .8;
+            color: #494949;
+            border: 0;
+            letter-spacing: 2px;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        
+        <header class="animate__animated animate__fadeInDown">
+            <h1> IRIS FLOWER PREDICTION</h1>
+        </header>
+        <div class="main-header animate__animated animate__fadeInLeft">
+            <label for="Algorithm"> Select Algorithm: </label>
+            <select name="Algorithm" id="Algorithm ">
+                <option value="SVM">SVM</option>
+                <option value="Linear Regression">Logistic Regression</option>
+                <option value="Decision Tree">Decision Tree</option>
+            </select>
+        </div>
+
+        <form class="main-content " action="/predict" method="post">
+            <input class='animate__animated animate__fadeInRight' type="Float" id="sepallength" name="Sepal length"
+                placeholder="Enter Sepal Length:"><br>
+            <input class='animate__animated animate__fadeInRight' type="Float" id="sepalwidth" name="Sepal Width"
+                placeholder="Enter Sepal Width:"><br>
+            <input class='animate__animated animate__fadeInRight' type="Float" id="petallength" name="Petal Length"
+                placeholder="Enter Petal Length:"><br>
+            <input class='animate__animated animate__fadeInRight' type="Float" id="petalwidth" name="Petal Width"
+                placeholder="Enter Petal Width:"><br>
+            <input type="submit" value="Predict" class="btn animate__animated animate__fadeInUp">
+        </form>
+    </div>
+</body>
+
+</html>
