@@ -18,37 +18,44 @@
         /* header alignment css */
 
         header {
-            padding: 2rem 0 0 4rem;
+            padding: 2rem 0 0 0;
             display: flex;
             align-items: center;
             justify-content: flex-start;
+            letter-spacing: .4rem;
 
         }
 
         h1 {
-            color: #fff;
+            color: #ffdbdf;
             font-family:'Times New Roman', Times, serif;
             font-size: 3rem;
             padding: 2rem 15rem 2rem 25rem;
             align-content : center;
         }
+        h2{
+            color:#ffdbdf;
+            padding: 5rem 15rem 5rem 30rem;
+            font-family: sans-serif
+        }
 
         /* Flower background */
 
         .bg {
-            background-image: url('https://images.pexels.com/photos/5122689/pexels-photo-5122689.jpeg?auto=compress&cs=tinysrgb&w=600');
+            background-color: rgb(4,4,24);
             background-size: cover;
-            height: 100vh;
-            width: 100vw;
+            position:absolute;
+            min-width: 100%;
+            min-height: 100%;
         }
 
-
+    
         /* main header css */
 
 
         .main-header {
-            color: #fff;
-            padding: 2rem 0 3rem 26rem;
+            color: #ffdbdf;
+            padding: 2rem 0 3rem 28rem;
 
         }
 
@@ -62,8 +69,8 @@
 
         select {
             padding: 1rem 10rem 1rem 1rem;
-            background: #fff;
-            border: 2px solid #fff;
+            background: #ffdbdf;
+            border: 2px solid #ffdbdf;
             outline: 0;
             color: #222222;
             border-radius: 10px;
@@ -81,7 +88,7 @@
             flex-wrap: wrap;
             flex-direction: column;
             align-content: center;
-      
+            
         }
 
         input {
@@ -112,12 +119,12 @@
         }
 
         ::placeholder {
-            color: #ffffff;
+            color: #ffbdc5;
         }
 
         .btn {
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #ffbdc5;
+            color: #282828;
             text-align: center;
             border: 0;
             padding: 1rem;
@@ -127,7 +134,7 @@
         }
 
         .btn:hover {
-         opacity: .8;
+            background-color: #ffdbdf;
             color: #494949;
             border: 0;
             letter-spacing: 2px;
@@ -143,6 +150,7 @@
         <header class="animate__animated animate__fadeInDown">
             <h1> IRIS FLOWER PREDICTION</h1>
         </header>
+        
         <div class="main-header animate__animated animate__fadeInLeft">
             <label for="Algorithm"> Select Algorithm: </label>
             <select name="Algorithm" id="Algorithm ">
@@ -152,6 +160,7 @@
             </select>
         </div>
 
+    
         <form class="main-content " action="/predict" method="post">
             <input class='animate__animated animate__fadeInRight' type="Float" id="sepallength" name="Sepal length"
                 placeholder="Enter Sepal Length:"><br>
@@ -163,7 +172,11 @@
                 placeholder="Enter Petal Width:"><br>
             <input type="submit" value="Predict" class="btn animate__animated animate__fadeInUp">
         </form>
+            
+        <h2>
+            {{prediction_text}}</h2>
     </div>
+    
 </body>
 
 </html>

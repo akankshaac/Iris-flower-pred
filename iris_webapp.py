@@ -30,12 +30,15 @@ def predict():
 
     if Algorithm == "SVM":
        pred = svc.predict(arr)
+       return render_template('index.html',prediction_text =' The Predicted class of the flower is {}'.format(pred))
     elif Algorithm == "Logistic Regression":
         pred = LR.predict(arr)
+        return render_template('index.html',prediction_text =' The Predicted class of the flower is {}'.format(pred))
     else:
         pred = DTC.predict(arr)
+        return render_template('index.html',prediction_text =' The Predicted class of the flower is {}'.format(pred))
+    
 
-    return "The Predicted class of the flower is {}".format(pred)
     
 
 if __name__=='__main__':
