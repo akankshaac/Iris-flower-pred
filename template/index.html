@@ -35,15 +35,14 @@
         }
         h2{
             color:#ffdbdf;
-            padding: 5rem 15rem 5rem 30rem;
-            font-family: sans-serif
+            padding: 5rem 15rem 5rem 35rem;
+            font : message-box
         }
 
         /* Flower background */
 
         .bg {
-            background-color: rgb(4,4,24);
-            background-size: cover;
+            background: url('https://wallpapercave.com/wp/wp6749654.jpg') ; 
             position:absolute;
             min-width: 100%;
             min-height: 100%;
@@ -163,18 +162,19 @@
     
         <form class="main-content " action="/predict" method="post">
             <input class='animate__animated animate__fadeInRight' type="Float" id="sepallength" name="Sepal length"
-                placeholder="Enter Sepal Length:"><br>
+                placeholder="Enter Sepal Length:" required><br>
             <input class='animate__animated animate__fadeInRight' type="Float" id="sepalwidth" name="Sepal Width"
-                placeholder="Enter Sepal Width:"><br>
+                placeholder="Enter Sepal Width:" required ><br>
             <input class='animate__animated animate__fadeInRight' type="Float" id="petallength" name="Petal Length"
-                placeholder="Enter Petal Length:"><br>
+                placeholder="Enter Petal Length:"required><br>
             <input class='animate__animated animate__fadeInRight' type="Float" id="petalwidth" name="Petal Width"
-                placeholder="Enter Petal Width:"><br>
+                placeholder="Enter Petal Width:" required><br>
             <input type="submit" value="Predict" class="btn animate__animated animate__fadeInUp">
         </form>
             
         <h2>
-            {{prediction_text}}</h2>
+            {{prediction_text}}
+            {{ accuracyscore}}</h2>
     </div>
     
 </body>

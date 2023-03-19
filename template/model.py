@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import sklearn as sklearn
 import pickle
-"""Algorithm = SVC or LogisticRegression or DecisionTreeClassifier"""
 
 data = pd.read_csv('iris.csv')
 
@@ -27,6 +26,12 @@ DTC = DecisionTreeClassifier()
 DTC.fit(x_train.values,y_train.values)
 Pred = DTC.predict()
 
+from sklearn.metrics import accuracy_score
+accuracyscore = print(accuracy_score(y_test, pred))
+
+
+
 pickle.dump(svc,open('svc_model.pkl','wb'))
 pickle.dump(LR,open('LR_model.pkl','wb'))
 pickle.dump(DTC,open('DTC_model.pkl','wb'))
+
