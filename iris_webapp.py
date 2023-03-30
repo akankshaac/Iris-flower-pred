@@ -29,7 +29,6 @@ def predict():
     petalwidth = request.form.get('Petal Width')
     arr = np.array([[sepallength, sepalwidth, petallength,
        petalwidth ]]) 
-';jakjgrk;gma;j'
     if Algorithm == "SVM":
        pred = svc.predict(arr)
        return render_template('index.html', prediction_text =' The Predicted class of the flower is {}'.format(pred))
